@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: CORTEX_ANALYST_DEMO
+    description: A snowflake db
+    database: CORTEX_ANALYST_DEMO
+    schema: REVENUE_TIMESERIES
+    tables:
+      - name: PRODUCT_DIM
+        description: Sample Product table
+        columns:
+          - name: PRODUCT_ID
+            tests:
+              - unique
+              - not_null
