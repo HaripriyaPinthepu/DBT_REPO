@@ -1,0 +1,14 @@
+models:
+- name: hub_customer
+  description: This model consolidates customer data from the 'orders_raw' source,
+    generating a unique customer hash key and recording the load date for tracking
+    purposes.
+  columns:
+  - name: customer_hk
+    description: A unique hash key generated for each customer.
+  - name: customer_id
+    description: The original identifier for the customer from the source data.
+  - name: load_date
+    description: The timestamp indicating when the record was loaded.
+  - name: record_source
+    description: The source of the record, indicating its origin from 'orders_raw'.
