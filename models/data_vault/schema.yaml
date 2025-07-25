@@ -13,3 +13,14 @@ sources:
             tests:
               - unique
               - not_null
+              - no_negative_order_amount
+  - name: hub
+    description: A snowflake db
+    database: CORTEX_ANALYST_DEMO
+    schema: dbt_hp
+    tables:
+      - name: fact_order_1
+        freshness:
+          warn_after: { count: 4, period: hour }
+          error_after: { count: 18, period: hour }
+        loaded_at_field: load_date # the timestamp column to check freshness
