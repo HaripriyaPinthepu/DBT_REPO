@@ -40,6 +40,10 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
+      +schema: raw
+    data_vault:
+      hub:
+        +schema: raw
 
 vars:
   country_filter: 'US'
