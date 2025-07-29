@@ -35,6 +35,10 @@ clean-targets:         # directories to be removed by `dbt clean`
 # continue to be built as views. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 
+
+on-run-start: insert into CORTEX_ANALYST_DEMO.RAW.AUDIT_LOG values('start',current_timestamp());
+on-run-end: insert into CORTEX_ANALYST_DEMO.RAW.AUDIT_LOG values('end',current_timestamp());
+
 models:
    my_new_project:
     +schema: raw  
