@@ -48,6 +48,9 @@ models:
     data_vault:
       hub:
         +schema: raw
+        tags:
+          -hub
+          
 
 vars:
   country_filter: 'US'
