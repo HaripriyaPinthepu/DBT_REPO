@@ -36,7 +36,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 
-on-run-start: insert into CORTEX_ANALYST_DEMO.RAW.AUDIT_LOG values('start',current_timestamp());
+on-run-start: insert into CORTEX_ANALYST_DEMO.RAW.AUDIT_LOG values('{{ invocation_id }}',current_timestamp());
 on-run-end: insert into CORTEX_ANALYST_DEMO.RAW.AUDIT_LOG values('end',current_timestamp());
 
 models:
